@@ -1,0 +1,28 @@
+
+<script type="text/javascript">
+    RED.nodes.registerType('custom-websocket-acknowledge',{
+        category: 'Websocket Custom Header',
+        color: '#FDF0C2',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:0,
+        icon: "file.png",
+        label: function() {
+            return this.name||"custom-websocket-acknowledge";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="custom-websocket-acknowledge">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="custom-websocket-acknowledge">
+    <p>A simple node that acknowledge messages from a websocket</p>
+</script>
+

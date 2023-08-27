@@ -1,0 +1,66 @@
+<script type="text/javascript">
+    RED.nodes.registerType('custom-websocket-subscriber',{
+        category: 'Websocket Custom Header',
+        color: '#FDF0C2',
+        defaults: {
+            name: {value:""},
+            url: {value:"", required: true},
+            xclientid: {value:""},
+            token: {value:""}
+        },
+        inputs:0,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"custom-websocket-subscriber";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="custom-websocket-subscriber">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-url"><i class="fa fa-tag"></i> wss-URL</label>
+        <input type="text" id="node-input-url" placeholder="url">
+    </div>
+    <div class="form-row">
+        <label for="node-input-xclientid"><i class="fa fa-tag"></i> X-Client-Id</label>
+        <input type="text" id="node-input-xclientid" placeholder="xclientid">
+    </div>
+    <div class="form-row">
+        <label for="node-input-token"><i class="fa fa-tag"></i> Authorization</label>
+        <input type="text" id="node-input-token" placeholder="token">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="custom-websocket-subscriber">
+    <p>Websocketconnection with header to send Authorization (token) and UserId (X-Client-Id)</p>
+    <h3>Output</h3>
+    <dl class="message-properties">
+        <dt>Streaming message<span class="property-type">array</span></dt>
+        <dd>Message from Server [{typeOfMessage:String,topic:String, messageNumber:String, payload:String}]</dd>
+        <dl class="message-properties">
+            <dt>Type of data<span class="property-type">string</span></dt>
+            <dd>Type of data sended by Websocket Server</dd>
+        </dl>
+        <dl class="message-properties">
+            <dt>Topic <span class="property-type">string</span></dt>
+            <dd>Topic of the message</dd>
+        </dl>
+        <dl class="message-properties">
+            <dt>Message Number <span class="property-type">string</span></dt>
+            <dd>Number of Message</dd>
+        </dl>
+        <dl class="message-properties">
+            <dt>Message Payload <span class="property-type">string</span></dt>
+            <dd>Payload of Message</dd>
+        </dl>
+    </dl>
+    <dl class="message-properties">
+        <dt>Copy of Websocket <span class="property-type">WebSocket</span></dt>
+        <dd>Websocket to acknowledge message with websocket-acknowledge-node</dd>
+    </dl>
+</script>

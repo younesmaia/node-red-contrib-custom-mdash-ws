@@ -1,0 +1,22 @@
+{
+    "name": "node-red-contrib-custom-mdash-ws",
+    "version": "0.8.1",
+    "description": "Custom Websocket for mDash",
+    "repository": "",
+    "keywords": [
+      "node-red",
+      "websocket"
+      "mdash"
+    ],
+    "dependencies": {
+      "ws": "7.5.7"
+    },
+    "author": "younesmaia",
+    "license": "MIT",
+    "node-red": {
+      "nodes": {
+        "custom-websocket-acknowledge": "custom-websocket-acknowledge.js",
+        "custom-websocket-subscriber": "custom-websocket-subscriber.js"
+      }
+    }
+  }
